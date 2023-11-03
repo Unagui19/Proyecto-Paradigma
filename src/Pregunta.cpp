@@ -49,20 +49,19 @@ void Pregunta::crearRespuesta(string desc, Fecha fec, Usuario usu, Imagen img) {
 			case typeid(Activa):
 				Respuesta* respuesta = new Respuesta(desc, fec, usu, img);
 				guardarRespuesta(respuesta);
-				usuario.notificar();
 				break;
 			case typeid(Inactiva):
 				Respuesta* respuesta = new Respuesta(desc, fec, usu, img);
 				guardarRespuesta(respuesta);
-				usuario.notificar();
 				cambiarEstado(new Activa());
 				break;
 			case typeid(Suspendida):
 				Respuesta* respuesta = new Respuesta(desc, fec, usu, img);
 				guardarRespuesta(respuesta);
 				break;
-			default:
-				break;
+		}
+		if (estadoActual->notificar()) {
+			usuario.notificar();
 		}
 	} else {
 		cout << estadoActual->mostrarEstado() << endl;

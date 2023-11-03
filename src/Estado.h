@@ -16,6 +16,9 @@ public:
 	Estado(const Estado &other);
 	virtual bool puedeRecibirRespuesta();
 	virtual void mostrarEstado();
+	virtual bool notificar() {
+		return true;
+	};
 };
 
 class Activa : public Estado {
@@ -23,6 +26,9 @@ public:
 	bool puedeRecibirRespuesta();
 	void mostrarEstado() {
 		cout << "Activa" << endl;
+	};
+	bool notificar() {
+		return true;
 	};
 };
 
@@ -32,6 +38,9 @@ public:
 	void mostrarEstado() {
 		cout << "Inactiva" << endl;
 	};
+	bool notificar() {
+		return true;
+	};
 };
 
 class Solucionada : public Estado {
@@ -40,6 +49,9 @@ public:
 	void mostrarEstado()  {
 		cout << "Solucionada" << endl;
 	};
+	bool notificar() {
+		return false;
+	}
 };
 
 class Suspendida : public Estado {
@@ -48,6 +60,9 @@ public:
 	void mostrarEstado()  {
 		cout << "Suspendida" << endl;
 	};
+	bool notificar() {
+		return false;
+	}
 };
 
 #endif /* ESTADO_H_ */
