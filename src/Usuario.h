@@ -29,6 +29,7 @@ public:
 	void hacerPregunta();
 	void responderPregunta();
 	void listarInfo();
+	void eliminarCuenta(int idUsuario);
 	void notificar();
 };
 

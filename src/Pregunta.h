@@ -30,7 +30,10 @@ public:
 	virtual ~Pregunta();
 	Pregunta(const Pregunta &other);
 	void crearRespuesta(string, Fecha, Usuario, Imagen);
-	void cambiarEstado(Estado*);
+	void cambiarEstado(Estado* nuevoEstado);
+	void mostrarRespuesta(int idResp);
+	void listarInfo();
+
 };
 
 #endif /* PREGUNTA_H_ */

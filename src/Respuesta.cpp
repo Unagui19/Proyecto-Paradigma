@@ -36,3 +36,7 @@ Respuesta::Respuesta(const Respuesta &other) {
 void Respuesta::darMg() {
 	cantMg++;
 }
+
+int Respuesta::getMG(){
+	return cantMg;
+};

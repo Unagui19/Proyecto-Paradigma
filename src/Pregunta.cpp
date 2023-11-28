@@ -68,3 +68,9 @@ void Pregunta::crearRespuesta(string desc, Fecha fec, Usuario usu, Imagen img) {
 	}
 
 }
+
+void Pregunta::mostrarRespuesta(int idResp) {
+}
+
+void Pregunta::listarInfo() {
+}

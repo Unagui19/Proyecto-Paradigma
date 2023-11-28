@@ -16,6 +16,18 @@ Imagen::~Imagen() {
 	// TODO Auto-generated destructor stub
 }
 
+const string& Imagen::getArchivo() const {
+	return archivo;
+}
+
+const string& Imagen::getDescripcion() const {
+	return descripcion;
+}
+
+const string& Imagen::getTitulo() const {
+	return titulo;
+}
+
 Imagen::Imagen(const Imagen &other) {
 	// TODO Auto-generated constructor stub
 

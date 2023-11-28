@@ -26,6 +26,7 @@ public:
 	virtual ~Respuesta();
 	Respuesta(const Respuesta &other);
 	void darMg();
+	int getMG();
 };
 
 #endif /* RESPUESTA_H_ */

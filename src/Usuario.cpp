@@ -35,6 +35,13 @@ Usuario::Usuario(const Usuario &other) {
 
 }
 
+void Usuario::hacerPregunta(){};
+void Usuario:: responderPregunta(){};
+void Usuario:: listarInfo(){};
+void Usuario::eliminarCuenta(int idUsuario){};
+
 void Usuario::notificar() {
 	notificaciones++;
 }
+
+
