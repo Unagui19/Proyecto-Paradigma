@@ -1,0 +1,7 @@
+- imagenes
+- fechas
+- tags
+
+- noticaciones
+- 6 meses
+- 

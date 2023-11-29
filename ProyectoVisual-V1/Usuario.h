@@ -26,6 +26,19 @@ public:
     string GetNombre(){
         return nombre;
     }
+
+    // // m de sistema
+    // void eliminarCuenta()
+    // {
+    //     // Cambiar el estado de todas las preguntas asociadas al usuario a "suspendida"
+    //     for (Pregunta *pregunta : ListaPreguntas)
+    //     {
+    //         pregunta->cambiarEstado(new EstadoSuspendida());
+    //     }
+    //     // Limpiar la lista de preguntas
+    //     ListaPreguntas.clear();
+    //     cout << "La cuenta del usuario ha sido eliminada, y sus preguntas asociadas han sido suspendidas." << endl;
+    // }
     
 };
 

@@ -1,3 +1,6 @@
+#ifndef ESTADOSUSPENDIDA_H
+#define ESTADOSUSPENDIDA_H
+
 #include <iostream>
 #include "Estado.h"
 using namespace std;
@@ -14,5 +17,14 @@ public:
     ~EstadoSuspendida(){
         // 
     }
+
+    void mostrarEstado() const override {
+        cout << "Pregunta suspendida" << endl;
+    }
+
+    bool puedeRecibirRespuesta() const override {
+	    return true;
+    }
 };
 
+#endif

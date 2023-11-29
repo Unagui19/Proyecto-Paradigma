@@ -60,5 +60,7 @@ public:
         return ListaPreguntas;
     }
 
+    // borrarUsuario()
+
 };
 
