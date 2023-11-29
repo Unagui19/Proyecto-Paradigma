@@ -20,10 +20,10 @@ private:
 	Imagen imagen;
 	Fecha fechaCreacion;
 	Fecha ultimaRespuesta;
-	vector<Respuesta*> respuestas;
+	vector<Respuesta> respuestas;
 	Usuario usuario;
 	Estado* estadoActual;
-	void guardarRespuesta(Respuesta*);
+	void guardarRespuesta(Respuesta);
 public:
 	Pregunta();
 	Pregunta(string, string, string, Imagen, Fecha, Usuario);

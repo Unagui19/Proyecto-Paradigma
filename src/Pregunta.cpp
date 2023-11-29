@@ -39,7 +39,7 @@ void Pregunta::cambiarEstado(Estado* nuevoEstado) {
 	estadoActual = nuevoEstado;
 }
 
-void Pregunta::guardarRespuesta(Respuesta* respuesta) {
+void Pregunta::guardarRespuesta(Respuesta respuesta) {
 	respuestas.push_back(respuesta);
 }
 
@@ -69,8 +69,20 @@ void Pregunta::crearRespuesta(string desc, Fecha fec, Usuario usu, Imagen img) {
 
 }
 
-void Pregunta::mostrarRespuesta(int idResp) {
+void Pregunta::mostrarRespuesta(int codResp) {
+	bool flag=false;
+	for (int i = 0; i < respuestas.size(); ++i) {
+		if (codResp==respuestas[i].codigo) {
+			respuestas[i].listarInfo();
+			flag=true;
+			break;
+		}
+	}
+	if (flag==false) {
+		cout<<"No hay respuesta con el codigo: "<<codResp<<endl;
+	}
 }
 
-void Pregunta::listarInfo() {
+void Pregunta::listarInfo(){
+
 }

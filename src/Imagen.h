@@ -14,12 +14,13 @@ class Imagen {
 private:
 	string titulo;
 	string descripcion;
-	string archivo;//que es archivo?
+	//string archivo;//que es archivo?
 public:
 	Imagen();
+	Imagen(string titulo, string descripcion);
 	virtual ~Imagen();
 	Imagen(const Imagen &other);
-	const string& getArchivo() const;
+	//const string& getArchivo() const;
 	const string& getDescripcion() const;
 	const string& getTitulo() const;
 };

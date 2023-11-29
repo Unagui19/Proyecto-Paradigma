@@ -27,6 +27,7 @@ public:
 	Respuesta(const Respuesta &other);
 	void darMg();
 	int getMG();
+	void listarInfo();
 };
 
 #endif /* RESPUESTA_H_ */

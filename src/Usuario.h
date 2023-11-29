@@ -9,6 +9,8 @@
 #define USUARIO_H_
 #include <iostream>
 using namespace std;
+#include "Pregunta.h"
+#include "Respuesta.h"
 
 class Usuario {
 private:
@@ -21,9 +23,12 @@ private:
 	string nick;
 	int respAceptadas;
 	int notificaciones;
+	Pregunta preg;
+	Respuesta resp;
+
 public:
 	Usuario();
-	Usuario(string, string, string, string, string, string);
+	Usuario(string nom, string ape, string em, string con, string po, string ni);
 	virtual ~Usuario();
 	Usuario(const Usuario &other);
 	void hacerPregunta();

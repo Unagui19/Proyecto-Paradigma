@@ -7,8 +7,14 @@
 
 #ifndef SISTEMA_H_
 #define SISTEMA_H_
+#include <iostream>
+using namespace std;
 #include "Usuario.h"
 #include "Pregunta.h"
+#include "Imagen.h"
+#include "Fecha.h"
+#include "Respuesta.h"
+#include <vector>
 
 class Sistema {
 private:
@@ -21,13 +27,13 @@ public:
 	virtual ~Sistema();
 	Sistema(const Sistema &other);
 	void crearPregunta(string, string, Imagen);
-	void crearUsuario(string, string, string, string, string, string);
+	void crearUsuario(string nombre, string apellido, string email, string contra, string paisO, string nick);
 	void mostrarListadoPreguntas();
 	void mostrarPregunta(int idPregunta);
 	void borrarUsuario(int idUsu);
 	void mostrarUsuario(int idUsu);
 	void rankingUsuarios();
-	Pregunta buscarPreguntaPorTags(string tag);
+	vector<Pregunta> buscarPreguntaPorTags(string tag);
 
 };
 

@@ -6,6 +6,9 @@
  */
 
 #include "Usuario.h"
+#include "Sistema.h"
+#include "Pregunta.h"
+#include <list>
 
 Usuario::Usuario() {
 	// TODO Auto-generated constructor stub
@@ -32,11 +35,14 @@ Usuario::~Usuario() {
 
 Usuario::Usuario(const Usuario &other) {
 	// TODO Auto-generated constructor stub
-
 }
 
-void Usuario::hacerPregunta(){};
-void Usuario:: responderPregunta(){};
+void Usuario::hacerPregunta(){
+
+};
+void Usuario:: responderPregunta(){
+
+};
 void Usuario:: listarInfo(){};
 void Usuario::eliminarCuenta(int idUsuario){};
 

@@ -40,3 +40,7 @@ void Respuesta::darMg() {
 int Respuesta::getMG(){
 	return cantMg;
 };
+
+void Respuesta::listarInfo(){
+
+}
