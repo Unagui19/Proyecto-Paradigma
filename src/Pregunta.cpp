@@ -49,7 +49,7 @@ void Pregunta::crearRespuesta(string desc, Fecha fec, Usuario* usu, Imagen img) 
 	if (estadoActual->puedeRecibirRespuesta()) {
 		Respuesta* respuesta = new Respuesta(desc, fec, usu, img);
 		guardarRespuesta(respuesta);
-		if (estadoActual->puedeRecibirRespuesta()) {
+		if (estadoActual->notificar()) {
 			usuario->notificar();
 		}
 		if (typeid(*estadoActual) == typeid(Inactiva)) {
@@ -72,4 +72,5 @@ Respuesta* Pregunta::buscarRespuestaPorId(int id) {
 
 void Pregunta::aceptarRespuesta(int id) {
 	buscarRespuestaPorId(id)->aceptar();
+	cambiarEstado(new Solucionada());
 }
