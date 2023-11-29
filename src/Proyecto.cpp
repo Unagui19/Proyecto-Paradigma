@@ -6,10 +6,19 @@
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 
-#include <iostream>
-using namespace std;
+#include "Sistema.h"
 
 int main() {
-	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+	Sistema sistema;
+	Usuario usu1;
+	sistema.crearUsuario("Franco", "Rodriguez Romano", "frodriguez@gmail.com", "soyfranquitouwu", "Argentina", "Unagui19");
+	sistema.buscarUsuarioPorId(1)->hacerPregunta();
+	sistema.buscarUsuarioPorId(1)->hacerPregunta();
+	sistema.listarPreguntas();
 	return 0;
 }
+
+//sistema
+//sistema.crearus(us1)
+//us1.hacerpreg()
+//sistema.crearpreg(..., usu1)

@@ -35,6 +35,15 @@ public:
 	void responderPregunta(int);
 	void listarInfo();
 	void notificar();
+	int getRespAcep() {
+		return respAceptadas;
+	};
+	int getId() {
+		return id;
+	}
+	string getNombre() {
+		return nombre;
+	}
 };
 
 #endif /* USUARIO_H_ */

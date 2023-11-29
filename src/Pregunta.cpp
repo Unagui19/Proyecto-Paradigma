@@ -14,6 +14,7 @@ Pregunta::Pregunta() {
 
 Pregunta::Pregunta(string tit, string desc, string tag, Imagen img, Fecha creacion, Usuario* usu) {
 	codigo++;
+	id = codigo;
 	titulo = tit;
 	descripcion = desc;
 	tags = tag;

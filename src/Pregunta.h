@@ -15,6 +15,7 @@
 class Pregunta {
 private:
 	int static codigo;
+	int id;
 	string titulo;
 	string descripcion;
 	string tags;
@@ -34,9 +35,18 @@ public:
 	void crearRespuesta(string, Fecha, Usuario*, Imagen);
 	void cambiarEstado(Estado*);
 	int getId() {
-		return codigo;
+		return id;
 	};
 	void aceptarRespuesta(int);
+	string getTag() {
+		return tags;
+	};
+	string getTitulo() {
+		return titulo;
+	};
+	string getDescripcion() {
+		return descripcion;
+	};
 };
 
 #endif /* PREGUNTA_H_ */

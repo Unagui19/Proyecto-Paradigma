@@ -16,7 +16,7 @@ private:
 	vector<Pregunta*> preguntas;
 	void guardarUsuario(Usuario*);
 	void guardarPregunta(Pregunta*);
-	Pregunta* buscarPreguntaPorId(int);
+	void borrarUsuarioPorId(int);
 public:
 	Sistema();
 	virtual ~Sistema();
@@ -24,6 +24,12 @@ public:
 	void crearPregunta(string, string, string, Imagen, Fecha, Usuario*);
 	void crearUsuario(string, string, string, string, string, string);
 	void crearRespuesta(string, Fecha, Usuario*, Imagen, int);
+	void revisarFecha();
+	vector<Pregunta*> buscarPreguntasPorTag(string);
+	void rankingUsuario();
+	Pregunta* buscarPreguntaPorId(int);
+	Usuario* buscarUsuarioPorId(int);
+	void listarPreguntas();
 };
 
 #endif /* SISTEMA_H_ */
