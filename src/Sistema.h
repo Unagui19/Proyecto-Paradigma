@@ -30,6 +30,7 @@ public:
 	Pregunta* buscarPreguntaPorId(int);
 	Usuario* buscarUsuarioPorId(int);
 	void listarPreguntas();
+	void revisarFecha();
 };
 
 #endif /* SISTEMA_H_ */

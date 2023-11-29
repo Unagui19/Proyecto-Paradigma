@@ -6,6 +6,7 @@
  */
 
 #include "Sistema.h"
+#include "Usuario.h"
 
 Sistema::Sistema() {
 	// TODO Auto-generated constructor stub
@@ -105,5 +106,16 @@ void Sistema::listarPreguntas() {
 		cout << "Titulo: " << preguntas[i]->getTitulo() << endl;
 		cout << "Descripcion: " << preguntas[i]->getDescripcion() << endl;
 		cout << "Tags: " << preguntas[i]->getTag() << endl;
+	}
+}
+
+void Sistema::revisarFecha(){
+
+	Fecha fechaActual;
+	for (size_t i = 0; i < preguntas.size(); ++i) {
+
+		if(fechaActual-preguntas[i]->ultimaRespuesta>=183){
+			preguntas[i]->cambiarEstado(new Inactiva);
+		}
 	}
 }
