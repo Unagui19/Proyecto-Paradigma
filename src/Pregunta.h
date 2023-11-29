@@ -10,6 +10,7 @@
 #include <vector>
 #include "Respuesta.h"
 #include "Estado.h"
+#include "Usuario.h"
 
 class Pregunta {
 private:
@@ -21,16 +22,21 @@ private:
 	Fecha fechaCreacion;
 	Fecha ultimaRespuesta;
 	vector<Respuesta*> respuestas;
-	Usuario usuario;
+	Usuario* usuario;
 	Estado* estadoActual;
 	void guardarRespuesta(Respuesta*);
+	Respuesta* buscarRespuestaPorId(int);
 public:
 	Pregunta();
-	Pregunta(string, string, string, Imagen, Fecha, Usuario);
+	Pregunta(string, string, string, Imagen, Fecha, Usuario*);
 	virtual ~Pregunta();
 	Pregunta(const Pregunta &other);
-	void crearRespuesta(string, Fecha, Usuario, Imagen);
+	void crearRespuesta(string, Fecha, Usuario*, Imagen);
 	void cambiarEstado(Estado*);
+	int getId() {
+		return codigo;
+	};
+	void aceptarRespuesta(int);
 };
 
 #endif /* PREGUNTA_H_ */

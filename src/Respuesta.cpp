@@ -12,7 +12,7 @@ Respuesta::Respuesta() {
 
 }
 
-Respuesta::Respuesta(string desc, Fecha fec, Usuario usu, Imagen img) {
+Respuesta::Respuesta(string desc, Fecha fec, Usuario* usu, Imagen img) {
 	respuesta = desc;
 	fecha = fec;
 	usuario = usu;
@@ -35,4 +35,12 @@ Respuesta::Respuesta(const Respuesta &other) {
 
 void Respuesta::darMg() {
 	cantMg++;
+}
+
+bool Respuesta::estaAceptada() {
+	return aceptada;
+}
+
+void Respuesta::aceptar() {
+	aceptada = true;
 }

@@ -17,6 +17,7 @@ private:
 	string archivo;
 public:
 	Imagen();
+	Imagen(string, string, string);
 	virtual ~Imagen();
 	Imagen(const Imagen &other);
 };

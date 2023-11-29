@@ -12,7 +12,7 @@ Pregunta::Pregunta() {
 
 }
 
-Pregunta::Pregunta(string tit, string desc, string tag, Imagen img, Fecha creacion, Usuario usu) {
+Pregunta::Pregunta(string tit, string desc, string tag, Imagen img, Fecha creacion, Usuario* usu) {
 	codigo++;
 	titulo = tit;
 	descripcion = desc;
@@ -35,36 +35,41 @@ Pregunta::Pregunta(const Pregunta &other) {
 }
 
 void Pregunta::cambiarEstado(Estado* nuevoEstado) {
-	delete estadoActual;
-	estadoActual = nuevoEstado;
+	if (typeid(*estadoActual) != typeid(Solucionada)) {
+		delete estadoActual;
+		estadoActual = nuevoEstado;
+	}
 }
 
 void Pregunta::guardarRespuesta(Respuesta* respuesta) {
 	respuestas.push_back(respuesta);
 }
 
-void Pregunta::crearRespuesta(string desc, Fecha fec, Usuario usu, Imagen img) {
+void Pregunta::crearRespuesta(string desc, Fecha fec, Usuario* usu, Imagen img) {
 	if (estadoActual->puedeRecibirRespuesta()) {
-		switch (estadoActual->mostrarEstado()) {
-			case typeid(Activa):
-				Respuesta* respuesta = new Respuesta(desc, fec, usu, img);
-				guardarRespuesta(respuesta);
-				break;
-			case typeid(Inactiva):
-				Respuesta* respuesta = new Respuesta(desc, fec, usu, img);
-				guardarRespuesta(respuesta);
-				cambiarEstado(new Activa());
-				break;
-			case typeid(Suspendida):
-				Respuesta* respuesta = new Respuesta(desc, fec, usu, img);
-				guardarRespuesta(respuesta);
-				break;
+		Respuesta* respuesta = new Respuesta(desc, fec, usu, img);
+		guardarRespuesta(respuesta);
+		if (estadoActual->puedeRecibirRespuesta()) {
+			usuario->notificar();
 		}
-		if (estadoActual->notificar()) {
-			usuario.notificar();
+		if (typeid(*estadoActual) == typeid(Inactiva)) {
+			cambiarEstado(new Activa());
 		}
 	} else {
-		cout << estadoActual->mostrarEstado() << endl;
+		cout << "La pregunta ya fue solucionada" << endl;
 	}
+}
 
+Respuesta* Pregunta::buscarRespuestaPorId(int id) {
+	for (size_t i = 0; i < respuestas.size(); ++i) {
+		if (respuestas[i]->getId() == id) {
+			return respuestas[i];
+		}
+	}
+	cout << "No se encontro la pregunta" << endl;
+	return 0;
+}
+
+void Pregunta::aceptarRespuesta(int id) {
+	buscarRespuestaPorId(id)->aceptar();
 }

@@ -12,6 +12,12 @@ Imagen::Imagen() {
 
 }
 
+Imagen::Imagen(string tit, string arch, string desc) {
+	titulo = tit;
+	archivo = arch;
+	descripcion = desc;
+}
+
 Imagen::~Imagen() {
 	// TODO Auto-generated destructor stub
 }

@@ -9,9 +9,14 @@
 #define USUARIO_H_
 #include <iostream>
 using namespace std;
+#include "Imagen.h"
+#include "Fecha.h"
+
+class Sistema;
 
 class Usuario {
 private:
+	Sistema* sistema;
 	int static id;
 	string nombre;
 	string apellido;
@@ -23,11 +28,11 @@ private:
 	int notificaciones;
 public:
 	Usuario();
-	Usuario(string, string, string, string, string, string);
+	Usuario(string, string, string, string, string, string, Sistema*);
 	virtual ~Usuario();
 	Usuario(const Usuario &other);
 	void hacerPregunta();
-	void responderPregunta();
+	void responderPregunta(int);
 	void listarInfo();
 	void notificar();
 };

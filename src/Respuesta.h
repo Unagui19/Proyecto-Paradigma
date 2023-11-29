@@ -15,17 +15,22 @@ class Respuesta {
 private:
 	string respuesta;
 	Fecha fecha;
-	Usuario usuario;
+	Usuario* usuario;
 	Imagen imagen;
 	bool aceptada;
 	int static codigo;
 	int cantMg;
 public:
 	Respuesta();
-	Respuesta(string, Fecha, Usuario, Imagen);
+	Respuesta(string, Fecha, Usuario*, Imagen);
 	virtual ~Respuesta();
 	Respuesta(const Respuesta &other);
 	void darMg();
+	bool estaAceptada();
+	void aceptar();
+	int getId() {
+		return codigo;
+	};
 };
 
 #endif /* RESPUESTA_H_ */
