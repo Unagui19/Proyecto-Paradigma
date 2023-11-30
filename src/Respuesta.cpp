@@ -53,10 +53,6 @@ bool Respuesta::isAceptada() const {
 
 //-----------Getters y Setters--------------
 
-void Respuesta::setAceptada(bool aceptada) {
-	this->aceptada = aceptada;
-}
-
 int Respuesta::getCantMg() const {
 	return cantMg;
 }

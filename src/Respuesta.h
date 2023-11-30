@@ -32,7 +32,6 @@ public:
 
 	//------------GETTERS Y SETTERS-------------------
 	bool isAceptada() const;
-	void setAceptada(bool aceptada);
 	int getCantMg() const;
 	void setCantMg(int cantMg);
 	int getIdResp() const;
