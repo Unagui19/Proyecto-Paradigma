@@ -18,7 +18,6 @@ class Usuario {
 private:
 	Sistema* sistema;
 	int static codigo;
-	int id;
 	string nombre;
 	string apellido;
 	string email;
@@ -27,23 +26,25 @@ private:
 	string nick;
 	int respAceptadas;
 	int notificaciones;
+	Imagen foto;
 public:
 	Usuario();
 	Usuario(string, string, string, string, string, string, Sistema*);
-	virtual ~Usuario();
 	Usuario(const Usuario &other);
+	virtual ~Usuario();
+	void notificar();
 	void hacerPregunta();
 	void responderPregunta(int);
-	void listarInfo();
-	void notificar();
 	void eliminarCuenta();
+	void listarInfo();
+	void aceptarRespuesta(int);
 
 	//------------GETTERS-------------------
 	int getRespAcep() {
 		return respAceptadas;
 	};
-	int getId() {
-		return id;
+	int getCodigo() {
+		return codigo;
 	}
 	string getNombre() {
 		return nombre;

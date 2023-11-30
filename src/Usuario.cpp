@@ -16,7 +16,6 @@ Usuario::Usuario() {
 
 Usuario::Usuario(string nom, string ape, string em, string con, string po, string ni, Sistema* sis) {
 	codigo++;
-	id=codigo;
 	sistema = sis;
 	nombre = nom;
 	apellido = ape;
@@ -105,3 +104,14 @@ void Usuario::eliminarCuenta() {
 	}
 	cout << "Accion cancelada" << endl;
 }
+
+void Usuario::listarInfo(){
+	cout << "Usuario: " << codigo  << "   Nick" << nick << endl;
+	cout <<"Nombre: " << apellido << ", " << nombre << "   Foto: "<< foto.getImagen() << endl;
+	cout <<"País: " << pais << "\nEmail: " << email  << endl;
+	cout <<"Respuestas Aceptadas: " << this->getRespAcep() << "   Notificaciones: " << notificaciones << endl;
+}
+/*void Usuario::aceptarRespuesta(int respuesta){
+
+}
+*/

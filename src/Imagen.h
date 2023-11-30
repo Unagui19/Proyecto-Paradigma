@@ -20,6 +20,7 @@ public:
 	Imagen(string, string, string);
 	virtual ~Imagen();
 	Imagen(const Imagen &other);
+	string getImagen();
 };
 
 #endif /* IMAGEN_H_ */
