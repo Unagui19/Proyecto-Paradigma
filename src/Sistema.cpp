@@ -88,10 +88,10 @@ void Sistema::borrarUsuario(Usuario* usu){
 		cout << "Elemento no encontrado en el vector." << endl;
 	}
 
-	for (size_t i = 0; i < preguntas.end(); ++i) {//aqui busco las preguntas asociadas al usuario eliminado y les cambio el estado a "Suspendida"
-		if(preguntas[i]->usuario->getId()==usu->getId()){
+	for (size_t i = 0; i < preguntas.size(); ++i) {//aqui busco las preguntas asociadas al usuario eliminado y les cambio el estado a "Suspendida"
+		if(preguntas[i]->getUsuario()->getId() == usu->getId()){
 			preguntas[i]->cambiarEstado(new Suspendida);
-			preguntas[i]->usuario=nullptr;//apunto las preguntas relacionadas al usuario eliminado hacia null;
+			//preguntas[i]->getUsuario() = nullptr;//apunto las preguntas relacionadas al usuario eliminado hacia null;
 		}
 	}
 
@@ -144,7 +144,7 @@ void Sistema::revisarFecha(){
 	Fecha fechaActual;
 	for (size_t i = 0; i < preguntas.size(); ++i) {
 
-		if(fechaActual-preguntas[i]->ultimaRespuesta>183){
+		if(&fechaActual - preguntas[i]->getUltimaRespuesta() > 183){
 			preguntas[i]->cambiarEstado(new Inactiva);
 		}
 	}

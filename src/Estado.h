@@ -16,7 +16,9 @@ public:
 	virtual ~Estado();
 	Estado(const Estado &other);
 	virtual bool puedeRecibirRespuesta();
-	virtual string getEstado();
+	virtual string getEstado() {
+		return "";
+	};
 	virtual bool notificar() {
 		return true;
 	};

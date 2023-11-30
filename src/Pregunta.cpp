@@ -80,15 +80,13 @@ void Pregunta::rankingRespuestas() {
 	int max = -1;
 	for (size_t j = 0; j < respuestas.size(); ++j) {
 		for (size_t i = 0; i < aux.size(); ++i) {
-			if(!respuestas[i]->isAceptada()) //control para ver si la respuesta es la aceptada
-			{
-				if (aux[i]->getCantMg() > max)
-				{
+			if(!respuestas[i]->isAceptada()) { //control para ver si la respuesta es la aceptada
+				if (aux[i]->getCantMg() > max) {
 					max = aux[i]->getCantMg();
 					maxId = aux[i]->getIdResp();
 				}
 			}
-			else{//si la respuesta esta aceptada sale del for direrectamente
+			else { //si la respuesta esta aceptada sale del for direrectamente
 				maxId = aux[i]->getIdResp();
 				break;
 			}
@@ -96,12 +94,12 @@ void Pregunta::rankingRespuestas() {
 		cout << "Respuesta: " << buscarRespuestaPorId(maxId)->getIdResp() << endl;
 		cout << "Cantidad de Me Gusta: " << buscarRespuestaPorId(maxId)->getCantMg() << endl;
 
-		if(buscarRespuestaPorId(maxId)->aceptada)
+		if(buscarRespuestaPorId(maxId)->isAceptada()) {
 			cout << "¡¡Respuesta aceptada!!" << endl;
 		}
 
 		for(size_t i = 0; i < aux.size(); ++i) {
-			if (aux[i]->getIdResp()() == maxId) {
+			if (aux[i]->getIdResp() == maxId) {
 				aux.erase(aux.begin() + i); //metodo eliminar un element esp
 			}
 		}

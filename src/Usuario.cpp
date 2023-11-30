@@ -96,5 +96,12 @@ void Usuario::responderPregunta(int idPregunta) {
 
 
 void Usuario::eliminarCuenta() {
-	sistema->borrarUsuario(this);
+	cout << "Desea eliminar su cuenta? (Si [1], No [2])" << endl;
+	int op;
+	cin >> op;
+	if (op == 1) {
+		sistema->borrarUsuario(this);
+		return;
+	}
+	cout << "Accion cancelada" << endl;
 }

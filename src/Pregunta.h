@@ -21,7 +21,7 @@ private:
 	string tags;
 	Imagen imagen;
 	Fecha fechaCreacion;
-	Fecha ultimaRespuesta;
+	Fecha* ultimaRespuesta;
 	vector<Respuesta*> respuestas;
 	Usuario* usuario;
 	Estado* estadoActual;
@@ -47,6 +47,12 @@ public:
 	};
 	string getDescripcion() {
 		return descripcion;
+	};
+	Fecha* getUltimaRespuesta() {
+		return ultimaRespuesta;
+	};
+	Usuario* getUsuario() {
+		return usuario;
 	};
 };
 
