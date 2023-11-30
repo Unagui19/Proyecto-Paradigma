@@ -91,8 +91,9 @@ void Pregunta::rankingRespuestas() {
 				break;
 			}
 		}
-		cout << "Respuesta: " << buscarRespuestaPorId(maxId)->getIdResp() << endl;
-		cout << "Cantidad de Me Gusta: " << buscarRespuestaPorId(maxId)->getCantMg() << endl;
+		Respuesta* seleccionada = buscarRespuestaPorId(maxId);
+		cout << "Respuesta: " << (j+1) << " " << seleccionada->getRespuesta() << endl;
+		cout << "Cantidad de Me Gusta: " << seleccionada->getCantMg() << endl;
 
 		if(buscarRespuestaPorId(maxId)->isAceptada()) {
 			cout << "¡¡Respuesta aceptada!!" << endl;
