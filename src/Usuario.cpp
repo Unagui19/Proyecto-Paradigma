@@ -8,6 +8,7 @@
 #include "Usuario.h"
 #include "Sistema.h"
 
+		//-------------CONSTRUCTORES Y DESTRUCTOR-------------------
 Usuario::Usuario() {
 	// TODO Auto-generated constructor stub
 
@@ -36,6 +37,9 @@ Usuario::Usuario(const Usuario &other) {
 	// TODO Auto-generated constructor stub
 
 }
+
+
+		//------------OTROS METODOS-------------------
 
 void Usuario::notificar() {
 	notificaciones++;

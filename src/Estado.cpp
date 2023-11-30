@@ -21,13 +21,15 @@ Estado::Estado(const Estado &other) {
 
 }
 
+
+		//------------CLASE PADRE "ESTADO"-------------------
+
 bool Estado::puedeRecibirRespuesta(){
 	return true;
 }
 
-void Estado::mostrarEstado() {
 
-}
+		//------------CLASES HIJAS-------------------
 
 bool Activa::puedeRecibirRespuesta() {
 	return true;

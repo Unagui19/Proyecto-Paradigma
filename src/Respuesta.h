@@ -19,6 +19,7 @@ private:
 	Imagen imagen;
 	bool aceptada;
 	int static codigo;
+	int idResp;
 	int cantMg;
 public:
 	Respuesta();
@@ -28,9 +29,15 @@ public:
 	void darMg();
 	bool estaAceptada();
 	void aceptar();
-	int getId() {
-		return codigo;
-	};
+
+	//------------GETTERS Y SETTERS-------------------
+	bool isAceptada() const;
+	void setAceptada(bool aceptada);
+	int getCantMg() const;
+	void setCantMg(int cantMg);
+	int getIdResp() const;
+	const Imagen& getImagen() const;
+	const string& getRespuesta() const;
 };
 
 #endif /* RESPUESTA_H_ */

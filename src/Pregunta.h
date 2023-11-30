@@ -34,6 +34,7 @@ public:
 	Pregunta(const Pregunta &other);
 	void crearRespuesta(string, Fecha, Usuario*, Imagen);
 	void cambiarEstado(Estado*);
+	void rankingRespuestas();
 	int getId() {
 		return id;
 	};

@@ -7,6 +7,9 @@
 
 #include "Sistema.h"
 #include "Usuario.h"
+#include "Pregunta.h"
+
+		//-------------CONSTRUCTORES Y DESTRUCTOR-------------------
 
 Sistema::Sistema() {
 	// TODO Auto-generated constructor stub
@@ -22,6 +25,8 @@ Sistema::Sistema(const Sistema &other) {
 
 }
 
+		//------------METODOS PARA USUARIO-------------------
+
 void Sistema::guardarUsuario(Usuario* usuario) {
 	usuarios.push_back(usuario);
 }
@@ -31,41 +36,11 @@ void Sistema::crearUsuario(string nom, string ape, string em, string con, string
 	guardarUsuario(usuario);
 }
 
-void Sistema::guardarPregunta(Pregunta* pregunta) {
-	preguntas.push_back(pregunta);
-}
-
-void Sistema::crearPregunta(string tit, string desc, string tag, Imagen img, Fecha creacion, Usuario* usu) {
-	Pregunta* pregunta = new Pregunta(tit, desc, tag, img, creacion, usu);
-	guardarPregunta(pregunta);
-}
 
 void Sistema::crearRespuesta(string tit, Fecha fecha, Usuario* usu, Imagen img, int idPregunta) {
 	buscarPreguntaPorId(idPregunta)->crearRespuesta(tit, fecha, usu, img);
 }
 
-Pregunta* Sistema::buscarPreguntaPorId(int id) {
-	for (size_t i = 0; i < preguntas.size(); ++i) {
-		if (preguntas[i]->getId() == id) {
-			return preguntas[i];
-		}
-	}
-	cout << "No se encontro la pregunta" << endl;
-	return 0;
-}
-
-void Sistema::revisarFecha() {
-}
-
-vector<Pregunta*> Sistema::buscarPreguntasPorTag(string tag) {
-	vector<Pregunta*> preguntasTag;
-	for (size_t i = 0; i < preguntas.size(); ++i) {
-		if (preguntas[i]->getTag() == tag) {
-			preguntasTag.push_back(preguntas[i]);
-		}
-	}
-	return preguntasTag;
-}
 
 Usuario* Sistema::buscarUsuarioPorId(int id) {
 	for (size_t i = 0; i < usuarios.size(); ++i) {
@@ -100,6 +75,16 @@ void Sistema::rankingUsuario() {
 	}
 }
 
+		//------------METODOS PARA PREGUNTAS-------------------
+
+void Sistema::guardarPregunta(Pregunta* pregunta) {
+	preguntas.push_back(pregunta);
+}
+
+void Sistema::crearPregunta(string tit, string desc, string tag, Imagen img, Fecha creacion, Usuario* usu) {
+	Pregunta* pregunta = new Pregunta(tit, desc, tag, img, creacion, usu);
+	guardarPregunta(pregunta);
+}
 void Sistema::listarPreguntas() {
 	for (size_t i = 0; i < preguntas.size(); ++i) {
 		cout << "Id: " << preguntas[i]->getId() << endl;
@@ -109,12 +94,34 @@ void Sistema::listarPreguntas() {
 	}
 }
 
+Pregunta* Sistema::buscarPreguntaPorId(int id) {
+	for (size_t i = 0; i < preguntas.size(); ++i) {
+		if (preguntas[i]->getId() == id) {
+			return preguntas[i];
+		}
+	}
+	cout << "No se encontro la pregunta" << endl;
+	return 0;
+}
+
+
+vector<Pregunta*> Sistema::buscarPreguntasPorTag(string tag) {
+	vector<Pregunta*> preguntasTag;
+	for (size_t i = 0; i < preguntas.size(); ++i) {
+		if (preguntas[i]->getTag() == tag) {
+			preguntasTag.push_back(preguntas[i]);
+		}
+	}
+	return preguntasTag;
+}
+
+
 void Sistema::revisarFecha(){
 
 	Fecha fechaActual;
 	for (size_t i = 0; i < preguntas.size(); ++i) {
 
-		if(fechaActual-preguntas[i]->ultimaRespuesta>=183){
+		if(fechaActual-preguntas[i]->ultimaRespuesta>183){
 			preguntas[i]->cambiarEstado(new Inactiva);
 		}
 	}

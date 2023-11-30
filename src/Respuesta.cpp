@@ -18,6 +18,7 @@ Respuesta::Respuesta(string desc, Fecha fec, Usuario* usu, Imagen img) {
 	usuario = usu;
 	imagen = img;
 	codigo++;
+	idResp=codigo;
 	cantMg = 0;
 	aceptada = false;
 }
@@ -44,3 +45,40 @@ bool Respuesta::estaAceptada() {
 void Respuesta::aceptar() {
 	aceptada = true;
 }
+
+bool Respuesta::isAceptada() const {
+	return aceptada;
+}
+
+
+//-----------Getters y Setters--------------
+
+void Respuesta::setAceptada(bool aceptada) {
+	this->aceptada = aceptada;
+}
+
+int Respuesta::getCantMg() const {
+	return cantMg;
+}
+
+void Respuesta::setCantMg(int cantMg) {
+	this->cantMg = cantMg;
+}
+
+int Respuesta::getIdResp() const {
+	return idResp;
+}
+
+
+
+const Imagen& Respuesta::getImagen() const {
+	return imagen;
+}
+
+
+
+const string& Respuesta::getRespuesta() const {
+	return respuesta;
+}
+
+

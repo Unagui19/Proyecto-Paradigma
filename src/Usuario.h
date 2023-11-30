@@ -35,6 +35,8 @@ public:
 	void responderPregunta(int);
 	void listarInfo();
 	void notificar();
+
+	//------------GETTERS-------------------
 	int getRespAcep() {
 		return respAceptadas;
 	};
