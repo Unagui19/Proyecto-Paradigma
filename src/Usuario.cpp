@@ -15,7 +15,8 @@ Usuario::Usuario() {
 }
 
 Usuario::Usuario(string nom, string ape, string em, string con, string po, string ni, Sistema* sis) {
-	id++;
+	codigo++;
+	id=codigo;
 	sistema = sis;
 	nombre = nom;
 	apellido = ape;
@@ -27,7 +28,7 @@ Usuario::Usuario(string nom, string ape, string em, string con, string po, strin
 	notificaciones = 0;
 }
 
-int Usuario::id = 0;
+int Usuario::codigo = 0;
 
 Usuario::~Usuario() {
 	// TODO Auto-generated destructor stub
@@ -91,4 +92,9 @@ void Usuario::responderPregunta(int idPregunta) {
 		imagen = Imagen(tituloIMG, archivoIMG, descripcionIMG);
 	}
 	sistema->crearRespuesta(titulo, Fecha(), this, imagen, idPregunta);
+}
+
+
+void Usuario::eliminarCuenta() {
+	sistema->borrarUsuario(this);
 }

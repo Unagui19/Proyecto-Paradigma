@@ -7,6 +7,8 @@
 
 #ifndef SISTEMA_H_
 #define SISTEMA_H_
+#include <iostream>
+using namespace std;
 #include "Usuario.h"
 #include "Pregunta.h"
 
@@ -16,19 +18,20 @@ private:
 	vector<Pregunta*> preguntas;
 	void guardarUsuario(Usuario*);
 	void guardarPregunta(Pregunta*);
-	void borrarUsuarioPorId(int);
 public:
 	Sistema();
 	virtual ~Sistema();
 	Sistema(const Sistema &other);
-	void crearPregunta(string, string, string, Imagen, Fecha, Usuario*);
+
 	void crearUsuario(string, string, string, string, string, string);
-	void crearRespuesta(string, Fecha, Usuario*, Imagen, int);
-	void revisarFecha();
-	vector<Pregunta*> buscarPreguntasPorTag(string);
-	void rankingUsuario();
-	Pregunta* buscarPreguntaPorId(int);
 	Usuario* buscarUsuarioPorId(int);
+	void rankingUsuario();
+	void borrarUsuario(Usuario*);
+
+	void crearRespuesta(string, Fecha, Usuario*, Imagen, int);
+	void crearPregunta(string, string, string, Imagen, Fecha, Usuario*);
+	vector<Pregunta*> buscarPreguntasPorTag(string);
+	Pregunta* buscarPreguntaPorId(int);
 	void listarPreguntas();
 	void revisarFecha();
 };

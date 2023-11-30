@@ -4,11 +4,13 @@
  *  Created on: 3 nov. 2023
  *      Author: Alumno
  */
-
+#include <iostream>
+using namespace std;
 #include "Sistema.h"
 #include "Usuario.h"
 #include "Pregunta.h"
-
+#include "vector"
+#include <algorithm>//en esta libreria esta la funcion find
 		//-------------CONSTRUCTORES Y DESTRUCTOR-------------------
 
 Sistema::Sistema() {
@@ -67,12 +69,33 @@ void Sistema::rankingUsuario() {
 		cout << "Cantidad respuestas aceptadas: " << buscarUsuarioPorId(maxId)->getRespAcep() << endl;
 		for(size_t i = 0; i < aux.size(); ++i) {
 			if (aux[i]->getId() == maxId) {
-				aux.erase(aux.begin() + i); //metodo eliminar un element esp
+				aux.erase(aux.begin() + i); //metodo eliminar un element especifico
 			}
 		}
 		max = -1;
 		maxId = 0;
 	}
+}
+
+void Sistema::borrarUsuario(Usuario* usu){
+	auto it=find(usuarios.begin(),usuarios.end(),usu);//busca un elemento especifico en un rango determinado (como en vectores, filas , etc)
+
+	if (it != usuarios.end()) {
+	        // Si se encontró el elemento, eliminarlo
+		usuarios.erase(it);
+		cout << "Elemento eliminado con éxito del listado." << endl;
+	} else {
+		cout << "Elemento no encontrado en el vector." << endl;
+	}
+
+	for (size_t i = 0; i < preguntas.end(); ++i) {//aqui busco las preguntas asociadas al usuario eliminado y les cambio el estado a "Suspendida"
+		if(preguntas[i]->usuario->getId()==usu->getId()){
+			preguntas[i]->cambiarEstado(new Suspendida);
+			preguntas[i]->usuario=nullptr;//apunto las preguntas relacionadas al usuario eliminado hacia null;
+		}
+	}
+
+	delete(usu);
 }
 
 		//------------METODOS PARA PREGUNTAS-------------------

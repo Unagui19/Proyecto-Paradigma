@@ -17,7 +17,8 @@ class Sistema;
 class Usuario {
 private:
 	Sistema* sistema;
-	int static id;
+	int static codigo;
+	int id;
 	string nombre;
 	string apellido;
 	string email;
@@ -35,6 +36,7 @@ public:
 	void responderPregunta(int);
 	void listarInfo();
 	void notificar();
+	void eliminarCuenta();
 
 	//------------GETTERS-------------------
 	int getRespAcep() {
