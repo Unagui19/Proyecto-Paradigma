@@ -17,8 +17,15 @@ int main() {
 	sistema.listarPreguntas();
 	sistema.crearUsuario("Marcelo", "Kahedera", "marKaher@gmail.com", "adafqwqdf", "Argentina", "Kahecelo");
 	sistema.buscarUsuarioPorId(1)->listarInfo();
+	sistema.buscarUsuarioPorId(2)->listarInfo();
+	sistema.buscarUsuarioPorId(2)->hacerPregunta();
+	sistema.buscarUsuarioPorId(2)->responderPregunta(2);
+	sistema.buscarUsuarioPorId(1)->aceptarRespuesta(2, 1);
+	sistema.rankingUsuario();
+	sistema.listarPreguntas();
 	sistema.buscarUsuarioPorId(2)->eliminarCuenta();
 	sistema.rankingUsuario();
+	sistema.listarPreguntas();
 	return 0;
 }
 

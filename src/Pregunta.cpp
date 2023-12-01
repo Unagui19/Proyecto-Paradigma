@@ -122,3 +122,7 @@ void Pregunta::listarInformacion(){
 	cout << "Etiquetas: " << getTag() << "   Fecha: " << fechaCreacion << endl;
 	cout << "Estado: " << getEstadoActual() << endl;
 }
+
+void Pregunta::eliminaUsuario() {
+	usuario = new Usuario();
+}

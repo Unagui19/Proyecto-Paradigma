@@ -39,6 +39,7 @@ public:
 	void notificar();
 	void eliminarCuenta();
 	void aceptarRespuesta(int, int);
+	void agregarRespACeptada();
 
 	//------------GETTERS-------------------
 	int getRespAcep() {

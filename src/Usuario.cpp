@@ -11,7 +11,7 @@
 		//-------------CONSTRUCTORES Y DESTRUCTOR-------------------
 Usuario::Usuario() {
 	// TODO Auto-generated constructor stub
-
+	nick = "USUARIO ELIMINADO";
 }
 
 Usuario::Usuario(string nom, string ape, string em, string con, string po, string ni, Sistema* sis) {
@@ -116,4 +116,8 @@ void Usuario::listarInfo(){
 void Usuario::aceptarRespuesta(int idPreg, int idResp){
 	Pregunta* pregunta = sistema->buscarPreguntaPorId(idPreg);
 	pregunta->aceptarRespuesta(idResp);
+}
+
+void Usuario::agregarRespACeptada() {
+	respAceptadas++;
 }

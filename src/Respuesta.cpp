@@ -44,6 +44,7 @@ bool Respuesta::estaAceptada() {
 
 void Respuesta::aceptar() {
 	aceptada = true;
+	usuario->agregarRespACeptada();
 }
 
 bool Respuesta::isAceptada() const {

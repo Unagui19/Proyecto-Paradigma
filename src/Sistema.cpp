@@ -90,7 +90,7 @@ void Sistema::borrarUsuario(Usuario* usu){
 	for (size_t i = 0; i < preguntas.size(); ++i) {//aqui busco las preguntas asociadas al usuario eliminado y les cambio el estado a "Suspendida"
 		if(preguntas[i]->getUsuario()->getId() == usu->getId()){
 			preguntas[i]->cambiarEstado(new Suspendida);
-			//preguntas[i]->getUsuario() = nullptr;//apunto las preguntas relacionadas al usuario eliminado hacia null;
+			preguntas[i]->eliminaUsuario(); //apunto las preguntas relacionadas al usuario eliminado hacia null;
 		}
 	}
 
@@ -114,9 +114,7 @@ void Sistema::crearPregunta(string tit, string desc, string tag, Imagen img, Fec
 void Sistema::listarPreguntas() {
 	for (size_t i = 0; i < preguntas.size(); ++i) {
 		cout << "Id: " << preguntas[i]->getId() << endl;
-		cout << "Titulo: " << preguntas[i]->getTitulo() << endl;
-		cout << "Descripcion: " << preguntas[i]->getDescripcion() << endl;
-		cout << "Tags: " << preguntas[i]->getTag() << endl;
+		preguntas[i]->listarInformacion();
 	}
 }
 

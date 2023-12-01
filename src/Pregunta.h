@@ -37,6 +37,7 @@ public:
 	void rankingRespuestas();
 	void listarInformacion();
 	void mostrarRespuesta(int);
+	void eliminaUsuario();
 	int getId() {
 		return id;
 	};
