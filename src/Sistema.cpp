@@ -65,8 +65,7 @@ void Sistema::rankingUsuario() {
 				maxId = aux[i]->getId();
 			}
 		}
-		cout << "Usuario: " << buscarUsuarioPorId(maxId)->getNombre() << endl;
-		cout << "Cantidad respuestas aceptadas: " << buscarUsuarioPorId(maxId)->getRespAcep() << endl;
+		mostrarUsuario(maxId);
 		for(size_t i = 0; i < aux.size(); ++i) {
 			if (aux[i]->getId() == maxId) {
 				aux.erase(aux.begin() + i); //metodo eliminar un element especifico
@@ -96,6 +95,10 @@ void Sistema::borrarUsuario(Usuario* usu){
 	}
 
 	delete(usu);
+}
+
+void Sistema::mostrarUsuario(int id){
+	this->buscarUsuarioPorId(id)->listarInfo();
 }
 
 		//------------METODOS PARA PREGUNTAS-------------------
@@ -148,4 +151,8 @@ void Sistema::revisarFecha(){
 			preguntas[i]->cambiarEstado(new Inactiva);
 		}
 	}
+}
+
+void Sistema::mostrarPregunta(int id){
+	buscarPreguntaPorId(id)->listarInformacion();
 }

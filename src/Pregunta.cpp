@@ -112,3 +112,13 @@ void Pregunta::aceptarRespuesta(int id) {
 	buscarRespuestaPorId(id)->aceptar();
 	cambiarEstado(new Solucionada());
 }
+
+void Pregunta::mostrarRespuesta(int id){
+	buscarRespuestaPorId(id)->listarInfo();
+}
+
+void Pregunta::listarInformacion(){
+	cout << "Pregunta: " << getTitulo() << "    Usuario: " << getUsuario()->getNick() << "\n    " << getDescripcion() << "\nImagen:" << imagen.getImagen() <<endl;
+	cout << "Etiquetas: " << getTag() << "   Fecha: " << fechaCreacion << endl;
+	cout << "Estado: " << getEstadoActual() << endl;
+}

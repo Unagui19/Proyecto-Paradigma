@@ -29,6 +29,7 @@ public:
 	void darMg();
 	bool estaAceptada();
 	void aceptar();
+	void listarInfo();
 
 	//------------GETTERS Y SETTERS-------------------
 	bool isAceptada() const;

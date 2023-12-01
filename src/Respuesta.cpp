@@ -82,3 +82,8 @@ const string& Respuesta::getRespuesta() const {
 }
 
 
+void Respuesta::listarInfo() {
+	cout << "Respuesta: "<< respuesta << "\n Imagen: " << imagen.getImagen() << endl;
+	cout << "Fecha: " << fecha << "   Usuario: " << usuario << endl;
+	cout << "Cantidad de Me Gusta: " << getCantMg() << "Esta Aceptada: " << isAceptada() << endl;
+}

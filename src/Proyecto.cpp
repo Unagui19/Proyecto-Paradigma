@@ -16,7 +16,7 @@ int main() {
 	sistema.buscarUsuarioPorId(1)->hacerPregunta();
 	sistema.listarPreguntas();
 	sistema.crearUsuario("Marcelo", "Kahedera", "marKaher@gmail.com", "adafqwqdf", "Argentina", "Kahecelo");
-	sistema.rankingUsuario();
+	sistema.buscarUsuarioPorId(1)->listarInfo();
 	sistema.buscarUsuarioPorId(2)->eliminarCuenta();
 	sistema.rankingUsuario();
 	return 0;

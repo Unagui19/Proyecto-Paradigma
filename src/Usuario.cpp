@@ -105,3 +105,15 @@ void Usuario::eliminarCuenta() {
 	}
 	cout << "Accion cancelada" << endl;
 }
+
+void Usuario::listarInfo(){
+	cout << "Usuario: " << nick << endl;
+	cout <<"Nombre: " << apellido << ", " << nombre << "   Foto: "<< foto.getImagen() << endl;
+	cout <<"País: " << paisOrigen << "\nEmail: " << email  << endl;
+	cout <<"Respuestas Aceptadas: " << getRespAcep() << "   Notificaciones: " << notificaciones << endl;
+}
+
+void Usuario::aceptarRespuesta(int idPreg, int idResp){
+	Pregunta* pregunta = sistema->buscarPreguntaPorId(idPreg);
+	pregunta->aceptarRespuesta(idResp);
+}

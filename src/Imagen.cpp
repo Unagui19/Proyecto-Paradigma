@@ -27,3 +27,9 @@ Imagen::Imagen(const Imagen &other) {
 
 }
 
+string Imagen::getImagen(){
+	string txt = "-imagen de ";
+	txt.append(titulo);
+	txt.append("-");
+	return txt;
+}

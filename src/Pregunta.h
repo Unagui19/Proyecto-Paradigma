@@ -35,6 +35,8 @@ public:
 	void crearRespuesta(string, Fecha, Usuario*, Imagen);
 	void cambiarEstado(Estado*);
 	void rankingRespuestas();
+	void listarInformacion();
+	void mostrarRespuesta(int);
 	int getId() {
 		return id;
 	};
@@ -53,6 +55,9 @@ public:
 	};
 	Usuario* getUsuario() {
 		return usuario;
+	};
+	string getEstadoActual(){
+		return estadoActual->getEstado();
 	};
 };
 

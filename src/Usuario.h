@@ -27,6 +27,7 @@ private:
 	string nick;
 	int respAceptadas;
 	int notificaciones;
+	Imagen foto;
 public:
 	Usuario();
 	Usuario(string, string, string, string, string, string, Sistema*);
@@ -37,6 +38,7 @@ public:
 	void listarInfo();
 	void notificar();
 	void eliminarCuenta();
+	void aceptarRespuesta(int, int);
 
 	//------------GETTERS-------------------
 	int getRespAcep() {
@@ -47,7 +49,10 @@ public:
 	}
 	string getNombre() {
 		return nombre;
-	}
+	};
+	string getNick() {
+			return nick;
+	};
 };
 
 #endif /* USUARIO_H_ */

@@ -34,6 +34,8 @@ public:
 	Pregunta* buscarPreguntaPorId(int);
 	void listarPreguntas();
 	void revisarFecha();
+	void mostrarUsuario(int);
+	void mostrarPregunta(int);
 };
 
 #endif /* SISTEMA_H_ */
