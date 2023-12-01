@@ -1,9 +1,3 @@
-/*
- * Pregunta.cpp
- *
- *  Created on: 3 nov. 2023
- *      Author: Alumno
- */
 
 #include "Pregunta.h"
 
@@ -15,12 +9,12 @@ Pregunta::Pregunta() {
 
 Pregunta::Pregunta(string tit, string desc, string tag, Imagen img, Fecha creacion, Usuario* usu) {
 	codigo++;
-	id = codigo;
 	titulo = tit;
 	descripcion = desc;
 	tags = tag;
 	imagen = img;
 	fechaCreacion = creacion;
+	ultimaRespuesta = creacion;
 	usuario = usu;
 	estadoActual = new Activa();
 }
@@ -70,7 +64,7 @@ Respuesta* Pregunta::buscarRespuestaPorId(int id) {
 			return respuestas[i];
 		}
 	}
-	cout << "No se encontro la pregunta" << endl;
+	cout << "No se encontr la respuesta" << endl;
 	return 0;
 }
 
@@ -112,4 +106,13 @@ void Pregunta::rankingRespuestas() {
 void Pregunta::aceptarRespuesta(int id) {
 	buscarRespuestaPorId(id)->aceptar();
 	cambiarEstado(new Solucionada());
+}
+void Pregunta::mostrarRespuesta(int id){
+	this->buscarRespuestaPorId(id)->listarInfo();
+}
+
+void Pregunta::listarInformacion(){
+	cout << "Pregunta: " << getTitulo() << "    Usuario: " << getUsuario()->getNick() << "\n    " << getDescripcion << "\nImagen:" << imagen.getImagen() <<endl;
+	cout << "Etiquetas: " << getTag() << "   Fecha: " << fechaCreacion << endl;
+	cout << "Estado: " << getEstadoActual() << endl;
 }

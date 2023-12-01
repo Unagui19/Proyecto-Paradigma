@@ -1,9 +1,3 @@
-/*
- * Estado.h
- *
- *  Created on: 3 nov. 2023
- *      Author: Alumno
- */
 
 #ifndef ESTADO_H_
 #define ESTADO_H_

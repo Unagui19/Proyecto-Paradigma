@@ -1,9 +1,3 @@
-/*
- * Respuesta.cpp
- *
- *  Created on: 3 nov. 2023
- *      Author: Alumno
- */
 
 #include "Respuesta.h"
 
@@ -46,35 +40,38 @@ void Respuesta::aceptar() {
 	aceptada = true;
 }
 
+
+//-----------Getters y Setters--------------
+
 bool Respuesta::isAceptada() const {
 	return aceptada;
 }
 
 
-//-----------Getters y Setters--------------
-
 int Respuesta::getCantMg() const {
 	return cantMg;
 }
 
-void Respuesta::setCantMg(int cantMg) {
+/*void Respuesta::setCantMg(int cantMg) {
 	this->cantMg = cantMg;
-}
+}*/
 
 int Respuesta::getIdResp() const {
 	return idResp;
 }
-
-
 
 const Imagen& Respuesta::getImagen() const {
 	return imagen;
 }
 
 
-
 const string& Respuesta::getRespuesta() const {
 	return respuesta;
 }
 
+void Respuesta::listarInfo(){
+	cout << "Respuesta: "<< respuesta << "\n Imagen: " << imagen.getImagen() <<endl;
+	cout << "Fecha: " << fecha << "   Usuario: " << usuario << endl;
+	cout << "Cantidad de Me Gusta: " << getCantMg() << "Esta Aceptada: " << isAceptada() << endl;
+}
 

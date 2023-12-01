@@ -1,9 +1,3 @@
-/*
- * Sistema.h
- *
- *  Created on: 3 nov. 2023
- *      Author: Alumno
- */
 
 #ifndef SISTEMA_H_
 #define SISTEMA_H_
@@ -20,16 +14,18 @@ private:
 	void guardarPregunta(Pregunta*);
 public:
 	Sistema();
-	virtual ~Sistema();
 	Sistema(const Sistema &other);
+	virtual ~Sistema();
 
 	void crearUsuario(string, string, string, string, string, string);
 	Usuario* buscarUsuarioPorId(int);
 	void rankingUsuario();
 	void borrarUsuario(Usuario*);
+	void mostrarUsuario(int);
 
 	void crearRespuesta(string, Fecha, Usuario*, Imagen, int);
 	void crearPregunta(string, string, string, Imagen, Fecha, Usuario*);
+	void mostrarPregunta(int);
 	vector<Pregunta*> buscarPreguntasPorTag(string);
 	Pregunta* buscarPreguntaPorId(int);
 	void listarPreguntas();

@@ -1,9 +1,4 @@
-/*
- * Sistema.cpp
- *
- *  Created on: 3 nov. 2023
- *      Author: Alumno
- */
+
 #include <iostream>
 using namespace std;
 #include "Sistema.h"
@@ -97,6 +92,9 @@ void Sistema::borrarUsuario(Usuario* usu){
 
 	delete(usu);
 }
+void Sistema::mostrarUsuario(int id){
+	this->buscarUsuarioPorId(id)->listarInfo();
+}
 
 		//------------METODOS PARA PREGUNTAS-------------------
 
@@ -148,4 +146,7 @@ void Sistema::revisarFecha(){
 			preguntas[i]->cambiarEstado(new Inactiva);
 		}
 	}
+}
+void Sistema::mostrarPregunta(int id){
+	buscarPreguntaPorId(id)->listarInformacion();
 }

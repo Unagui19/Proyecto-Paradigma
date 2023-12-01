@@ -1,9 +1,3 @@
-/*
- * Imagen.h
- *
- *  Created on: 3 nov. 2023
- *      Author: Alumno
- */
 
 #ifndef IMAGEN_H_
 #define IMAGEN_H_
@@ -18,8 +12,8 @@ private:
 public:
 	Imagen();
 	Imagen(string, string, string);
-	virtual ~Imagen();
 	Imagen(const Imagen &other);
+	virtual ~Imagen();
 	string getImagen();
 };
 

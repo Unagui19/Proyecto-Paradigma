@@ -1,9 +1,3 @@
-/*
- * Estado.cpp
- *
- *  Created on: 3 nov. 2023
- *      Author: Alumno
- */
 
 #include "Estado.h"
 

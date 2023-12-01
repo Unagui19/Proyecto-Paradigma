@@ -1,9 +1,3 @@
-/*
- * Pregunta.h
- *
- *  Created on: 3 nov. 2023
- *      Author: Alumno
- */
 
 #ifndef PREGUNTA_H_
 #define PREGUNTA_H_
@@ -15,7 +9,6 @@
 class Pregunta {
 private:
 	int static codigo;
-	int id;
 	string titulo;
 	string descripcion;
 	string tags;
@@ -30,15 +23,17 @@ private:
 public:
 	Pregunta();
 	Pregunta(string, string, string, Imagen, Fecha, Usuario*);
-	virtual ~Pregunta();
 	Pregunta(const Pregunta &other);
+	virtual ~Pregunta();
 	void crearRespuesta(string, Fecha, Usuario*, Imagen);
 	void cambiarEstado(Estado*);
 	void rankingRespuestas();
-	int getId() {
-		return id;
-	};
 	void aceptarRespuesta(int);
+	void mostrarRespuesta(int id);
+	void listarInformacion();
+	int getId() {
+		return codigo;
+	};
 	string getTag() {
 		return tags;
 	};
@@ -54,6 +49,9 @@ public:
 	Usuario* getUsuario() {
 		return usuario;
 	};
+	string getEstadoActual(){
+		return estadoActual->getEstado();
+	}
 };
 
 #endif /* PREGUNTA_H_ */

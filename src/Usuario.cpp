@@ -1,9 +1,3 @@
-/*
- * Usuario.cpp
- *
- *  Created on: 3 nov. 2023
- *      Author: Alumno
- */
 
 #include "Usuario.h"
 #include "Sistema.h"
@@ -106,10 +100,10 @@ void Usuario::eliminarCuenta() {
 }
 
 void Usuario::listarInfo(){
-	cout << "Usuario: " << codigo  << "   Nick" << nick << endl;
+	cout << "Usuario: " << nick << endl;
 	cout <<"Nombre: " << apellido << ", " << nombre << "   Foto: "<< foto.getImagen() << endl;
 	cout <<"País: " << paisOrigen << "\nEmail: " << email  << endl;
-	cout <<"Respuestas Aceptadas: " << this->getRespAcep() << "   Notificaciones: " << notificaciones << endl;
+	cout <<"Respuestas Aceptadas: " << getRespAcep() << "   Notificaciones: " << notificaciones << endl;
 }
 void Usuario::aceptarRespuesta(int idPreg, int idResp){
 	Pregunta* pregunta = sistema->buscarPreguntaPorId(idPreg);

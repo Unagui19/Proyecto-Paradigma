@@ -1,9 +1,3 @@
-/*
- * Imagen.cpp
- *
- *  Created on: 3 nov. 2023
- *      Author: Alumno
- */
 
 #include "Imagen.h"
 #include <string>
@@ -29,7 +23,8 @@ Imagen::Imagen(const Imagen &other) {
 
 }
 string Imagen::getImagen(){
-	string txt = "Imagen: ";
+	string txt = "-imagen de ";
 	txt.append(this->titulo);
+	txt.append("-");
 	return txt;
 }

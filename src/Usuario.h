@@ -1,9 +1,3 @@
-/*
- * Usuario.h
- *
- *  Created on: 3 nov. 2023
- *      Author: Alumno
- */
 
 #ifndef USUARIO_H_
 #define USUARIO_H_
@@ -46,7 +40,13 @@ public:
 	int getCodigo() {
 		return codigo;
 	}
-	string getNombre() {
+	int getId(){
+		return codigo;
+	}
+	string getNick() {
+		return nick;
+	}
+	string getNombre(){
 		return nombre;
 	}
 };
