@@ -7,6 +7,7 @@
 
 #include "Usuario.h"
 #include "Sistema.h"
+#include "string"
 
 		//-------------CONSTRUCTORES Y DESTRUCTOR-------------------
 Usuario::Usuario() {
@@ -49,23 +50,24 @@ void Usuario::notificar() {
 void Usuario::hacerPregunta() {
 	string titulo, descripcion, tag;
 	cout << "Titulo:" << endl;
-	cin >> titulo;
+	getline(cin, titulo);
 	cout << "Descripcion:" << endl;
-	cin >> descripcion;
+	getline(cin, descripcion);
 	cout << "Etiqueta:" << endl;
-	cin >> tag;
+	getline(cin, tag);
 	cout << "Desea agregar una imagen? (Presione 1 si asi lo desea)" << endl;
 	int op;
 	cin >> op;
+	cin.ignore();
 	Imagen imagen;
 	if (op == 1) {
 		string tituloIMG, archivoIMG, descripcionIMG;
 		cout << "Titulo:" << endl;
-		cin >> tituloIMG;
+		getline(cin, tituloIMG);
 		cout << "Descripcion:" << endl;
-		cin >> descripcionIMG;
+		getline(cin, descripcionIMG);
 		cout << "Archivo:" << endl;
-		cin >> archivoIMG;
+		getline(cin, archivoIMG);
 		imagen = Imagen(tituloIMG, archivoIMG, descripcionIMG);
 	}
 	sistema->crearPregunta(titulo, descripcion, tag, imagen, Fecha(), this);
@@ -74,9 +76,9 @@ void Usuario::hacerPregunta() {
 void Usuario::responderPregunta(int idPregunta) {
 	string titulo, descripcion;
 	cout << "Titulo:" << endl;
-	cin >> titulo;
+	getline(cin, titulo);
 	cout << "Descripcion:" << endl;
-	cin >> descripcion;
+	getline(cin, descripcion);
 	cout << "Desea agregar una imagen? (Presione 1 si asi lo desea)" << endl;
 	int op;
 	cin >> op;
@@ -84,11 +86,11 @@ void Usuario::responderPregunta(int idPregunta) {
 	if (op == 1) {
 		string tituloIMG, archivoIMG, descripcionIMG;
 		cout << "Titulo:" << endl;
-		cin >> tituloIMG;
+		getline(cin, tituloIMG);
 		cout << "Descripcion:" << endl;
-		cin >> descripcionIMG;
+		getline(cin, descripcionIMG);
 		cout << "Archivo:" << endl;
-		cin >> archivoIMG;
+		getline(cin, archivoIMG);
 		imagen = Imagen(tituloIMG, archivoIMG, descripcionIMG);
 	}
 	sistema->crearRespuesta(titulo, Fecha(), this, imagen, idPregunta);
